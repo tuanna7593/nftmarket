@@ -9,10 +9,9 @@ async function main() {
     console.log("not found the NFTMarket address to upgrade")
     return
   }
-
-  console.log("NFTMarket address", nftMarketAddress)
-  const NFTMarketV2Fac = await ethers.getContractFactory("NFTMarketV2");
-  await upgrades.upgradeProxy(nftMarketAddress, NFTMarketV2Fac);
+  
+  const NFTMarketV3Fac = await ethers.getContractFactory("NFTMarketV3");
+  await upgrades.upgradeProxy(nftMarketAddress, NFTMarketV3Fac);
   console.log("NFTMarket upgraded");
 }
 
